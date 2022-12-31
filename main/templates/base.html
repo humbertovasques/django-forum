@@ -1,0 +1,28 @@
+
+<a href="{% url 'home'  %}">Home</a>
+
+{% if user.is_authenticated %}
+
+
+    <form action="{% url 'logoutUsuario' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Sair</button>
+    </form>
+    {{user.nomeCompleto}}<br>
+    {{user.cpf}}<br>
+    {{user.idade}} anos<br>
+    {{user.dataNascimento}}<br>
+
+
+{% else %}
+
+    <a href="{% url 'loginUsuario' %}">Entrar</a>
+    <a href="{% url 'cadastrarUsuario' %}">Cadastre-se</a>
+
+
+{% endif %}
+
+<br>
+<br>
+
+{% block base %}{% endblock %}

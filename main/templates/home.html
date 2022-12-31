@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block base %}
+
+
+{% if user.is_authenticated %}
+<h2>{{success}}</h2>
+
+    mostrar listagem de foruns associasdos
+
+{% else %}
+
+    HOME PAGE
+
+{% endif %}
+
+{% endblock %}
